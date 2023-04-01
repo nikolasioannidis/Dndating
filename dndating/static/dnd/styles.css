@@ -1,0 +1,21 @@
+#icon {
+    margin-bottom: 30px;
+}
+
+body {
+    background-image : url('https://img.freepik.com/premium-photo/old-paper-texture-background_118047-1521.jpg?w=2000');
+    background-repeat: round;
+}
+
+#column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+
+
+#row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

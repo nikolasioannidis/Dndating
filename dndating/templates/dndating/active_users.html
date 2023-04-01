@@ -1,0 +1,33 @@
+{% extends 'dndating/layout.html' %}
+
+{% block body %}
+
+
+<div class="row">
+    {% for users in active_user %}
+        <div class="card" style="width: 17rem;  margin: 20px; background-image: url('https://wallpaperaccess.com/full/3872532.jpg'); ">
+        {% if users.image %}
+            <img class="card-img-top" src="{{ users.image.url }}" alt="{{ user }} Image"  height="300">
+        {% endif %}
+        <div class="card-body">
+        <h5 class="card-title"><strong>{{ users.name }}</strong></h5>
+
+        </div>
+        <ul  class="list-group list-group-flush">
+        <li style="background-image: url('https://wallpaperaccess.com/full/3872532.jpg');" class="list-group-item"><strong>Edition:</strong> {{ users.edition }}</li>
+        <li style="background-image: url('https://wallpaperaccess.com/full/3872532.jpg');" class="list-group-item"><strong>Class:</strong> {{ users.Class }}</li>
+        </ul>
+        <div class="card-body">
+            {% if user == users.user %}
+            <strong><a href="{% url 'edit' users.id %}" style = "color: blue" class="card-link"><u>Edit</u></a></strong>
+            {% else %}
+            <strong><a href="{% url 'show' users.id %}" style = "color: blue" class="card-link"><u>View Profile</u></a></strong>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}

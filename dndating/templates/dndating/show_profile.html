@@ -1,0 +1,88 @@
+{% extends 'dndating/layout.html' %}
+
+{% block body %}
+
+
+
+
+
+<div class="student-profile py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent text-center">
+            {% if info.image %}
+              <img class="profile_img" src="{{ info.image.url }}" alt="student dp"width="300" height="300">
+            {% endif %}
+
+
+            <br>
+            <br>
+
+              <h3>{{info.name}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Information</h3>
+            </div>
+            <div class="card-body pt-0">
+              <table class="table table-bordered">
+                <tr>
+                  <th width="30%">Genter</th>
+                  <td width="2%">:</td>
+                  <td>{{info.genter}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Experiance</th>
+                  <td width="2%">:</td>
+                  <td>{{info.years_playing}}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Edition</th>
+                  <td width="2%">:</td>
+                  <td>{{ info.edition }}</td>
+                </tr>
+
+                <tr>
+                  <th width="30%">Class</th>
+                  <td width="2%">:</td>
+                  <td>{{ info.Class }}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Faceook</th>
+                  <td width="2%">:</td>
+                  <td>{{ info.facebook }}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Instagram</th>
+                  <td width="2%">:</td>
+                  <td>{{ info.instagram }}</td>
+                </tr>
+                <tr>
+                  <th width="30%">Discord</th>
+                  <td width="2%">:</td>
+                  <td>{{ info.discord }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+            <div style="height: 26px"></div>
+          <div class="card shadow-sm">
+            <div class="card-header bg-transparent border-0">
+              <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Something about the adventurer :</h3>
+            </div>
+            <div class="card-body pt-0">
+                <p>{{ info.discription }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
